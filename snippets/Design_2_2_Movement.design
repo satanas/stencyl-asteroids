@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="1" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="1" id="-1">
+                <comment-short comment="false" x="26" y="40">
+                    <int id="0" val="Rotate Right"/>
+                </comment-short>
+                <if comment="false" x="26" y="60">
+                    <group eventID="1" id="-1">
+                        <rotate comment="false" x="37" y="93">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="2"/>
+                        </rotate>
+                    </group>
+                    <keystate comment="false" id="0" x="0" y="0">
+                        <int id="0" val="0"/>
+                        <CONTROL eid="var" id="1" vid="1"/>
+                    </keystate>
+                </if>
+                <comment-short comment="false" x="26" y="132">
+                    <int id="0" val="Rotate Left"/>
+                </comment-short>
+                <if comment="false" x="26" y="152">
+                    <group eventID="1" id="-1">
+                        <rotate2 comment="false" x="37" y="185">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="2"/>
+                        </rotate2>
+                    </group>
+                    <keystate comment="false" id="0" x="0" y="0">
+                        <int id="0" val="0"/>
+                        <CONTROL eid="var" id="1" vid="2"/>
+                    </keystate>
+                </if>
+                <comment-short comment="false" x="26" y="224">
+                    <int id="0" val="Throttle"/>
+                </comment-short>
+                <if comment="false" x="26" y="244">
+                    <group eventID="1" id="-1">
+                        <push-shove2 comment="false" x="37" y="277">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                            <getdir comment="false" id="2" x="0" y="0">
+                                <ACTOR eid="this" id="0"/>
+                            </getdir>
+                            <int id="3" val="5"/>
+                        </push-shove2>
+                    </group>
+                    <keystate comment="false" id="0" x="0" y="0">
+                        <int id="0" val="0"/>
+                        <CONTROL eid="var" id="1" vid="3"/>
+                    </keystate>
+                </if>
+                <comment-short comment="false" x="26" y="329">
+                    <int id="0" val="Brake"/>
+                </comment-short>
+                <if comment="false" x="26" y="349">
+                    <group eventID="1" id="-1">
+                        <push-shove2 comment="false" x="37" y="397">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                            <getdir comment="false" id="2" x="0" y="0">
+                                <ACTOR eid="this" id="0"/>
+                            </getdir>
+                            <int id="3" val="-5"/>
+                        </push-shove2>
+                    </group>
+                    <and comment="false" id="0" x="0" y="0">
+                        <keystate comment="false" id="0" x="0" y="0">
+                            <int id="0" val="0"/>
+                            <CONTROL eid="var" id="1" vid="4"/>
+                        </keystate>
+                        <or comment="false" id="1" x="0" y="0">
+                            <more comment="false" id="0" x="0" y="0">
+                                <get-dxy comment="false" id="0" x="0" y="0">
+                                    <ACTOR eid="this" id="0"/>
+                                    <int id="1" val="0"/>
+                                </get-dxy>
+                                <int id="1" val="0"/>
+                            </more>
+                            <more comment="false" id="1" x="0" y="0">
+                                <get-dxy comment="false" id="0" x="0" y="0">
+                                    <ACTOR eid="this" id="0"/>
+                                    <int id="1" val="1"/>
+                                </get-dxy>
+                                <int id="1" val="0"/>
+                            </more>
+                        </or>
+                    </and>
+                </if>
+                <if comment="false" x="26" y="449">
+                    <group eventID="1" id="-1">
+                        <set-fric-bounce comment="false" x="37" y="492">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                            <int id="2" val="-2"/>
+                        </set-fric-bounce>
+                    </group>
+                    <or comment="false" id="0" x="0" y="0">
+                        <more comment="false" id="0" x="0" y="0">
+                            <get-dxy comment="false" id="0" x="0" y="0">
+                                <ACTOR eid="this" id="0"/>
+                                <int id="1" val="0"/>
+                            </get-dxy>
+                            <int id="1" val="0"/>
+                        </more>
+                        <more comment="false" id="1" x="0" y="0">
+                            <get-dxy comment="false" id="0" x="0" y="0">
+                                <ACTOR eid="this" id="0"/>
+                                <int id="1" val="1"/>
+                            </get-dxy>
+                            <int id="1" val="0"/>
+                        </more>
+                    </or>
+                </if>
+            </group>
+        </step>
+    </group>
+    <group eventID="1" id="-1"/>
+    <group eventID="2" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="2" id="-1">
+                <set-fric-bounce comment="false" x="26" y="40">
+                    <ACTOR eid="this" id="0"/>
+                    <int id="1" val="0"/>
+                    <int id="2" val="-2"/>
+                </set-fric-bounce>
+            </group>
+        </init>
+    </group>
+    <group eventID="2" id="-1"/>
+</groups>
